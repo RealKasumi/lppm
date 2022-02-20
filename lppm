@@ -1,1 +1,46 @@
 #!/usr/bin/env python3
+
+# 
+# LPPM Package Manager
+# 
+# The missing extension to pkg/apt for Termux Android
+# 
+# This package manager aims to bring binaries to Termux which aren't available on apt/pkg.
+# You could of course install them manually, however that may be a bit daunting for those who are new to the commandline.
+# The aim of this program is to simplify the installing, updating and management of non-apt packages.
+# 
+# HOW IT WORKS:
+# Package creators can create "add.lppm", "update.lppm" and "remove.lppm" files for their packages.
+# Alternatively a folder exists on the main repository containing lppm files for nonlicensed or MIT-licensed packages.
+# The LPPM file is essentially a shellscript that downloads and installs the package in the way that the developer
+# intended for it to do.
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+
+
+
+import os
+import time
+import random
+
+import argparse
+parser = argparse.ArgumentParser()
+
+def help():
+    print("LocalPack Package Manager for Termux\n")
+    print("USAGE:\nlppm [USEFLAG] [QUERY]\n")
+    print("Available Flags:\n")
+    print("-a [PACKAGE]\nAdds the package to your system. It will remove any previous versions before installing.\nTo update, use the -u flag.\n")
+    print("-r [PACKAGE]\nRemoves the package from your system.\n")
+    print("-u [PACKAGE]\nUpdates the package on your system.")
